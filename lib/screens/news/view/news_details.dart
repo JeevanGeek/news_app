@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:news_app/utils/constants.dart';
 import 'package:news_app/models/article_model.dart';
 import 'package:news_app/screens/news/view/news_story.dart';
+import 'package:news_app/utils/strings.dart';
 
 class NewsDetails extends StatelessWidget {
   const NewsDetails(this.data, {Key? key}) : super(key: key);
@@ -128,7 +129,7 @@ class NewsDetails extends StatelessWidget {
                     child: Row(
                       children: const [
                         Text(
-                          'See full story',
+                          Strings.seeFullStory,
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,

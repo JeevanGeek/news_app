@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/utils/constants.dart';
 import 'package:news_app/screens/loading/loading.dart';
+import 'package:news_app/utils/strings.dart';
 
 class NewsApp extends StatelessWidget {
   const NewsApp({Key? key}) : super(key: key);
@@ -9,7 +10,7 @@ class NewsApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'News App',
+      title: Strings.appName,
       theme: ThemeData(
         useMaterial3: true,
         fontFamily: 'Helvetica',

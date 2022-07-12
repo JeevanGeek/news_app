@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/screens/search/search.dart';
+import 'package:news_app/utils/strings.dart';
 
 class Loader extends StatelessWidget {
   const Loader({Key? key}) : super(key: key);
@@ -45,7 +46,7 @@ class SomethingWentWrong extends StatelessWidget {
         ),
         const SizedBox(height: 15),
         const Text(
-          'Something went wrong',
+          Strings.somethingWentWrong,
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
@@ -55,7 +56,7 @@ class SomethingWentWrong extends StatelessWidget {
         ElevatedButton(
           onPressed: onRetry,
           child: const Text(
-            'Try again',
+            Strings.tryAgain,
             style: TextStyle(
               fontSize: 18,
             ),
@@ -80,7 +81,7 @@ class NoResultFound extends StatelessWidget {
         ),
         SizedBox(height: 15),
         Text(
-          'No result found',
+          Strings.noResultFound,
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
@@ -111,9 +112,7 @@ class SearchButton extends StatelessWidget {
 }
 
 class Empty extends StatelessWidget {
-  const Empty({
-    Key? key,
-  }) : super(key: key);
+  const Empty({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

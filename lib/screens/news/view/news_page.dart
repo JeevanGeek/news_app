@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
-import 'package:news_app/utils/sharedprefs.dart';
+import 'package:news_app/utils/storage.dart';
 import 'package:news_app/models/source_model.dart';
 import 'package:news_app/screens/news/news.dart';
+import 'package:news_app/utils/strings.dart';
 import 'package:news_app/widgets/category_list.dart';
 import 'package:news_app/widgets/country_list.dart';
 import 'package:news_app/widgets/news_list.dart';
@@ -40,7 +41,7 @@ class NewsView extends StatelessWidget {
         centerTitle: true,
         elevation: 0,
         leading: const SearchButton(),
-        title: const Header('News App'),
+        title: const Header(Strings.appName),
         actions: const [CountryList()],
       ),
       body: ListView(
@@ -59,7 +60,7 @@ class NewsView extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
                           Text(
-                            'Top Headlines',
+                            Strings.topHeadlines,
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
@@ -98,7 +99,7 @@ class NewsView extends StatelessWidget {
                           height: 200,
                           child: Center(
                             child: Text(
-                              'No sources found in ${Storage.getCountry()}',
+                              '${Strings.noSourcesFound} ${Storage.getCountry()}',
                               style: const TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 20,
@@ -108,7 +109,7 @@ class NewsView extends StatelessWidget {
                         )
                       : MultiSelectBottomSheet<Source>(
                           title: const Text(
-                            'Filter by sources',
+                            Strings.filterBySources,
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 20,

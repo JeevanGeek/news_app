@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_app/utils/sharedprefs.dart';
+import 'package:news_app/utils/storage.dart';
 
 part 'loading_event.dart';
 part 'loading_state.dart';

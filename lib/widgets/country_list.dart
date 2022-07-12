@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:news_app/models/country_model.dart';
 import 'package:news_app/screens/news/news.dart';
 import 'package:news_app/utils/constants.dart';
-import 'package:news_app/utils/sharedprefs.dart';
+import 'package:news_app/utils/storage.dart';
+import 'package:news_app/utils/strings.dart';
 
 class CountryList extends StatelessWidget {
   const CountryList({Key? key}) : super(key: key);
@@ -19,7 +20,7 @@ class CountryList extends StatelessWidget {
             physics: const BouncingScrollPhysics(),
             children: [
               const Text(
-                'Choose your location',
+                Strings.chooseYourLocation,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20,

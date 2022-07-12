@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/utils/constants.dart';
 import 'package:news_app/screens/search/search.dart';
+import 'package:news_app/utils/strings.dart';
 import 'package:news_app/widgets/news_list.dart';
 import 'package:news_app/widgets/widgets.dart';
 
@@ -28,7 +29,7 @@ class SearchView extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         elevation: 0,
-        title: const Header('News App'),
+        title: const Header(Strings.appName),
       ),
       body: ListView(
         shrinkWrap: true,
@@ -57,7 +58,7 @@ class SearchView extends StatelessWidget {
                 suffixIcon: const Icon(
                   Icons.search,
                 ),
-                hintText: 'Search for news...',
+                hintText: Strings.searchForNews,
                 hintStyle: const TextStyle(height: 1),
               ),
             ),

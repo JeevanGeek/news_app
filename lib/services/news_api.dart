@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:http/http.dart';
 import 'package:news_app/utils/secrets.dart';
-import 'package:news_app/utils/sharedprefs.dart';
+import 'package:news_app/utils/storage.dart';
 import 'package:news_app/models/news_model.dart';
 
 class NewsAPI {

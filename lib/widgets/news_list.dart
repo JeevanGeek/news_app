@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:news_app/utils/constants.dart';
 import 'package:news_app/models/article_model.dart';
 import 'package:news_app/screens/news/view/news_details.dart';
+import 'package:news_app/utils/strings.dart';
 
 class NewsList extends StatelessWidget {
   const NewsList(this.data, {Key? key}) : super(key: key);
@@ -104,7 +105,7 @@ class NewsSmallCard extends StatelessWidget {
                       ),
                       const SizedBox(height: 5),
                       Text(
-                        '${DateTime.now().difference(DateTime.parse(data.publishedAt)).inHours} hours ago',
+                        '${DateTime.now().difference(DateTime.parse(data.publishedAt)).inHours} ${Strings.hoursAgo}',
                         maxLines: 3,
                         style: const TextStyle(
                           fontSize: 12,
@@ -197,7 +198,7 @@ class NewsBigCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 5),
                     Text(
-                      '${DateTime.now().difference(DateTime.parse(data.publishedAt)).inHours} hours ago',
+                      '${DateTime.now().difference(DateTime.parse(data.publishedAt)).inHours} ${Strings.hoursAgo}',
                       maxLines: 3,
                       style: const TextStyle(
                         fontSize: 12,

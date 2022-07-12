@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/utils/constants.dart';
-import 'package:news_app/utils/sharedprefs.dart';
+import 'package:news_app/utils/storage.dart';
 import 'package:news_app/models/country_model.dart';
 import 'package:news_app/screens/news/news.dart';
+import 'package:news_app/utils/strings.dart';
 import 'package:news_app/widgets/widgets.dart';
 
 class LandingPage extends StatelessWidget {
@@ -14,7 +15,7 @@ class LandingPage extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         elevation: 0,
-        title: const Header('Choose your location'),
+        title: const Header(Strings.chooseYourLocation),
       ),
       body: ListView.builder(
         shrinkWrap: true,
