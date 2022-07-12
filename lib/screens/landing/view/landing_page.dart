@@ -3,6 +3,7 @@ import 'package:news_app/utils/constants.dart';
 import 'package:news_app/utils/sharedprefs.dart';
 import 'package:news_app/models/country_model.dart';
 import 'package:news_app/screens/news/news.dart';
+import 'package:news_app/widgets/widgets.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({Key? key}) : super(key: key);
@@ -11,19 +12,13 @@ class LandingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Choose your location',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        elevation: 0,
         centerTitle: true,
+        elevation: 0,
+        title: const Header('Choose your location'),
       ),
       body: ListView.builder(
         shrinkWrap: true,
-        physics: const ClampingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         itemCount: Country.countries.length,
         itemBuilder: (context, index) => ListTile(
           onTap: () async {

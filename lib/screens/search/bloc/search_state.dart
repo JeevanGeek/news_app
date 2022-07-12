@@ -7,7 +7,9 @@ abstract class SearchState extends Equatable {
   List<Object> get props => [];
 }
 
-class SearchInitial extends SearchState {}
+class SearchInitial extends SearchState {
+  const SearchInitial();
+}
 
 class SearchNewsLoading extends SearchState {
   const SearchNewsLoading();

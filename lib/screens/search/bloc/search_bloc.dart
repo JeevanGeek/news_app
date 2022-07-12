@@ -1,5 +1,5 @@
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/models/news_model.dart';
 import 'package:news_app/services/news_api.dart';
 
@@ -10,7 +10,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
   late NewsAPI api;
   late News news;
 
-  SearchBloc() : super(SearchInitial()) {
+  SearchBloc() : super(const SearchInitial()) {
     on<SearchEvent>((event, emit) async {
       api = NewsAPI();
 

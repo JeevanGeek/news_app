@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/screens/news/news.dart';
 import 'package:news_app/screens/landing/landing.dart';
 import 'package:news_app/screens/loading/loading.dart';
+import 'package:news_app/widgets/widgets.dart';
 
 class LoadingPage extends StatelessWidget {
   const LoadingPage({Key? key}) : super(key: key);
@@ -17,9 +18,7 @@ class LoadingPage extends StatelessWidget {
 }
 
 class LoadingView extends StatelessWidget {
-  const LoadingView({
-    Key? key,
-  }) : super(key: key);
+  const LoadingView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +43,7 @@ class LoadingView extends StatelessWidget {
             );
           }
         },
-        child: const SizedBox.shrink(),
+        child: const Empty(),
       ),
     );
   }

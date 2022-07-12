@@ -21,6 +21,8 @@ class _NewsStoryState extends State<NewsStory> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
+        elevation: 0,
         title: Text(
           widget.source,
           style: const TextStyle(
@@ -28,7 +30,6 @@ class _NewsStoryState extends State<NewsStory> {
             fontSize: 20,
           ),
         ),
-        centerTitle: false,
       ),
       body: Stack(
         children: [
