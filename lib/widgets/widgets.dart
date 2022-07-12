@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/screens/search/search.dart';
 import 'package:news_app/utils/strings.dart';
+import 'package:news_app/utils/styles.dart';
 
 class Loader extends StatelessWidget {
   const Loader({Key? key}) : super(key: key);
@@ -22,10 +23,7 @@ class Header extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       title.toUpperCase(),
-      style: const TextStyle(
-        fontSize: 20,
-        fontWeight: FontWeight.bold,
-      ),
+      style: Styles.bold20,
     );
   }
 }
@@ -47,19 +45,14 @@ class SomethingWentWrong extends StatelessWidget {
         const SizedBox(height: 15),
         const Text(
           Strings.somethingWentWrong,
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
+          style: Styles.bold20,
         ),
         const SizedBox(height: 15),
         ElevatedButton(
           onPressed: onRetry,
           child: const Text(
             Strings.tryAgain,
-            style: TextStyle(
-              fontSize: 18,
-            ),
+            style: Styles.white18,
           ),
         ),
       ],
@@ -82,10 +75,7 @@ class NoResultFound extends StatelessWidget {
         SizedBox(height: 15),
         Text(
           Strings.noResultFound,
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
+          style: Styles.bold20,
         ),
       ],
     );

@@ -1,9 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:news_app/utils/constants.dart';
 import 'package:news_app/models/article_model.dart';
 import 'package:news_app/screens/news/view/news_details.dart';
 import 'package:news_app/utils/strings.dart';
+import 'package:news_app/utils/styles.dart';
+import 'package:news_app/widgets/widgets.dart';
 
 class NewsList extends StatelessWidget {
   const NewsList(this.data, {Key? key}) : super(key: key);
@@ -68,9 +69,7 @@ class NewsSmallCard extends StatelessWidget {
                       fit: BoxFit.cover,
                       height: 100,
                       width: 100,
-                      placeholder: (context, url) => const Center(
-                        child: CircularProgressIndicator(),
-                      ),
+                      placeholder: (context, url) => const Loader(),
                       errorWidget: (context, url, error) => const Icon(
                         Icons.image,
                         size: 100,
@@ -88,29 +87,20 @@ class NewsSmallCard extends StatelessWidget {
                     children: [
                       Text(
                         data.source.name,
-                        style: const TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: Styles.bold18,
                       ),
                       const SizedBox(height: 5),
                       Text(
                         data.title,
                         maxLines: 3,
                         overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(
-                          fontSize: 15,
-                          color: kPrimaryColor,
-                        ),
+                        style: Styles.primary15,
                       ),
                       const SizedBox(height: 5),
                       Text(
                         '${DateTime.now().difference(DateTime.parse(data.publishedAt)).inHours} ${Strings.hoursAgo}',
                         maxLines: 3,
-                        style: const TextStyle(
-                          fontSize: 12,
-                          color: Colors.grey,
-                        ),
+                        style: Styles.grey12,
                       ),
                     ],
                   ),
@@ -164,9 +154,7 @@ class NewsBigCard extends StatelessWidget {
                     fit: BoxFit.cover,
                     height: 200,
                     width: double.infinity,
-                    placeholder: (context, url) => const Center(
-                      child: CircularProgressIndicator(),
-                    ),
+                    placeholder: (context, url) => const Loader(),
                     errorWidget: (context, url, error) => const Icon(
                       Icons.image,
                       size: 100,
@@ -181,29 +169,20 @@ class NewsBigCard extends StatelessWidget {
                   children: [
                     Text(
                       data.source.name,
-                      style: const TextStyle(
-                        fontSize: 17,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: Styles.bold18,
                     ),
                     const SizedBox(height: 5),
                     Text(
                       data.title,
                       maxLines: 3,
                       overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                        fontSize: 15,
-                        color: kPrimaryColor,
-                      ),
+                      style: Styles.primary15,
                     ),
                     const SizedBox(height: 5),
                     Text(
                       '${DateTime.now().difference(DateTime.parse(data.publishedAt)).inHours} ${Strings.hoursAgo}',
                       maxLines: 3,
-                      style: const TextStyle(
-                        fontSize: 12,
-                        color: Colors.grey,
-                      ),
+                      style: Styles.grey12,
                     ),
                   ],
                 ),

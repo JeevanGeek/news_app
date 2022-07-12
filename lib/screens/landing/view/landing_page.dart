@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/utils/constants.dart';
 import 'package:news_app/utils/storage.dart';
 import 'package:news_app/models/country_model.dart';
 import 'package:news_app/screens/news/news.dart';
 import 'package:news_app/utils/strings.dart';
+import 'package:news_app/utils/styles.dart';
 import 'package:news_app/widgets/widgets.dart';
 
 class LandingPage extends StatelessWidget {
@@ -35,11 +35,7 @@ class LandingPage extends StatelessWidget {
           },
           title: Text(
             Country.countries[index].name,
-            style: const TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: kPrimaryColor,
-            ),
+            style: Styles.primaryBold20,
           ),
           trailing: const Icon(
             Icons.arrow_right,

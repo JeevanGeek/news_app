@@ -5,6 +5,8 @@ import 'package:news_app/utils/constants.dart';
 import 'package:news_app/models/article_model.dart';
 import 'package:news_app/screens/news/view/news_story.dart';
 import 'package:news_app/utils/strings.dart';
+import 'package:news_app/utils/styles.dart';
+import 'package:news_app/widgets/widgets.dart';
 
 class NewsDetails extends StatelessWidget {
   const NewsDetails(this.data, {Key? key}) : super(key: key);
@@ -40,9 +42,7 @@ class NewsDetails extends StatelessWidget {
                     ),
                     child: CachedNetworkImage(
                       imageUrl: data.urlToImage,
-                      placeholder: (context, url) => const Center(
-                        child: CircularProgressIndicator(),
-                      ),
+                      placeholder: (context, url) => const Loader(),
                       errorWidget: (context, url, error) => const Icon(
                         Icons.image,
                         size: 300,
@@ -69,11 +69,7 @@ class NewsDetails extends StatelessWidget {
                         padding: const EdgeInsets.all(16.0),
                         child: Text(
                           data.title,
-                          style: const TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: kSecondaryColor,
-                          ),
+                          style: Styles.secondaryBold16,
                         ),
                       ),
                     ],
@@ -89,29 +85,19 @@ class NewsDetails extends StatelessWidget {
                 children: [
                   Text(
                     data.source.name,
-                    style: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: Styles.bold20,
                   ),
                   const SizedBox(height: 5),
                   Text(
                     DateFormat.yMMMMd()
                         .add_jm()
                         .format(DateTime.parse(data.publishedAt)),
-                    style: const TextStyle(
-                      fontSize: 12,
-                      color: kPrimaryColor,
-                      fontStyle: FontStyle.italic,
-                    ),
+                    style: Styles.primaryItalic12,
                   ),
                   const SizedBox(height: 15),
                   Text(
                     '${data.description}\n\n${data.content}',
-                    style: const TextStyle(
-                      fontSize: 16,
-                      color: kPrimaryColor,
-                    ),
+                    style: Styles.primary16,
                   ),
                   const SizedBox(height: 20),
                   InkWell(
@@ -130,11 +116,7 @@ class NewsDetails extends StatelessWidget {
                       children: const [
                         Text(
                           Strings.seeFullStory,
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            color: kPrimaryColor,
-                          ),
+                          style: Styles.primaryBold18,
                         ),
                         Icon(
                           Icons.chevron_right,

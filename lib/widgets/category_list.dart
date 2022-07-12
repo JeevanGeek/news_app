@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/models/category_model.dart';
 import 'package:news_app/screens/category/category.dart';
+import 'package:news_app/utils/styles.dart';
 
 class CategoryList extends StatelessWidget {
   const CategoryList({Key? key}) : super(key: key);
@@ -53,11 +54,7 @@ class CategoryList extends StatelessWidget {
                     child: Center(
                       child: Text(
                         Category.categories[index].name.toUpperCase(),
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
+                        style: Styles.whiteBold16,
                       ),
                     ),
                   ),

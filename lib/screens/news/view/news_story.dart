@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/utils/styles.dart';
+import 'package:news_app/widgets/widgets.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class NewsStory extends StatefulWidget {
@@ -25,10 +27,7 @@ class _NewsStoryState extends State<NewsStory> {
         elevation: 0,
         title: Text(
           widget.source,
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
-          ),
+          style: Styles.bold20,
         ),
       ),
       body: Stack(
@@ -41,7 +40,7 @@ class _NewsStoryState extends State<NewsStory> {
               javascriptMode: JavascriptMode.unrestricted,
             ),
           ),
-          if (loading) const Center(child: CircularProgressIndicator()),
+          if (loading) const Loader(),
         ],
       ),
     );

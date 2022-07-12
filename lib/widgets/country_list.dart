@@ -4,6 +4,7 @@ import 'package:news_app/screens/news/news.dart';
 import 'package:news_app/utils/constants.dart';
 import 'package:news_app/utils/storage.dart';
 import 'package:news_app/utils/strings.dart';
+import 'package:news_app/utils/styles.dart';
 
 class CountryList extends StatelessWidget {
   const CountryList({Key? key}) : super(key: key);
@@ -21,10 +22,7 @@ class CountryList extends StatelessWidget {
             children: [
               const Text(
                 Strings.chooseYourLocation,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ),
+                style: Styles.bold20,
               ),
               const Divider(),
               ListView.builder(
@@ -45,11 +43,7 @@ class CountryList extends StatelessWidget {
                   },
                   title: Text(
                     Country.countries[index].name,
-                    style: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: kPrimaryColor,
-                    ),
+                    style: Styles.primaryBold20,
                   ),
                   trailing: const Icon(
                     Icons.arrow_right,
@@ -70,10 +64,7 @@ class CountryList extends StatelessWidget {
           ),
           Text(
             Storage.getCountry(),
-            style: const TextStyle(
-              fontSize: 16,
-              color: kSecondaryColor,
-            ),
+            style: Styles.secondary16,
           )
         ],
       ),

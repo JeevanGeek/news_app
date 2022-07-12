@@ -5,6 +5,7 @@ import 'package:news_app/utils/storage.dart';
 import 'package:news_app/models/source_model.dart';
 import 'package:news_app/screens/news/news.dart';
 import 'package:news_app/utils/strings.dart';
+import 'package:news_app/utils/styles.dart';
 import 'package:news_app/widgets/category_list.dart';
 import 'package:news_app/widgets/country_list.dart';
 import 'package:news_app/widgets/news_list.dart';
@@ -61,10 +62,7 @@ class NewsView extends StatelessWidget {
                         children: const [
                           Text(
                             Strings.topHeadlines,
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
+                            style: Styles.bold18,
                           ),
                         ],
                       ),
@@ -100,20 +98,14 @@ class NewsView extends StatelessWidget {
                           child: Center(
                             child: Text(
                               '${Strings.noSourcesFound} ${Storage.getCountry()}',
-                              style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20,
-                              ),
+                              style: Styles.bold20,
                             ),
                           ),
                         )
                       : MultiSelectBottomSheet<Source>(
                           title: const Text(
                             Strings.filterBySources,
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                            ),
+                            style: Styles.bold20,
                           ),
                           items: state.sources.sources
                               .map((e) => MultiSelectItem(e, e.name))
