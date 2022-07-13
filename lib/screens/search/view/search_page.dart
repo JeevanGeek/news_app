@@ -40,7 +40,7 @@ class SearchView extends StatelessWidget {
             child: TextField(
               onChanged: (q) {
                 query = q;
-                BlocProvider.of<SearchBloc>(context).add(GetQueryNews(q));
+                BlocProvider.of<SearchBloc>(context).searchNews(q);
               },
               textAlignVertical: TextAlignVertical.center,
               decoration: InputDecoration(

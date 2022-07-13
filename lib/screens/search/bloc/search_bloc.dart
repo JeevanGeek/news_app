@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/models/news_model.dart';
@@ -7,6 +9,7 @@ part 'search_event.dart';
 part 'search_state.dart';
 
 class SearchBloc extends Bloc<SearchEvent, SearchState> {
+  Timer? debounce;
   late NewsAPI api;
   late News news;
 
@@ -26,5 +29,18 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
         }
       }
     });
+  }
+
+  void searchNews(String query) {
+    if (debounce?.isActive ?? false) debounce?.cancel();
+    debounce = Timer(const Duration(milliseconds: 500), () {
+      add(GetQueryNews(query));
+    });
+  }
+
+  @override
+  Future<void> close() {
+    debounce?.cancel();
+    return super.close();
   }
 }
