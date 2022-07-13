@@ -5,12 +5,11 @@ import 'package:news_app/widgets/news_list.dart';
 import 'package:news_app/widgets/widgets.dart';
 
 class CategoryPage extends StatelessWidget {
-  const CategoryPage(this.category, {Key? key}) : super(key: key);
-
-  final String category;
+  const CategoryPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final category = ModalRoute.of(context)?.settings.arguments as String;
     return BlocProvider(
       create: (context) => CategoryBloc()..add(GetCategoryNews(category)),
       child: CategoryView(category: category),

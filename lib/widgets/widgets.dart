@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/screens/search/search.dart';
+import 'package:news_app/utils/routes.dart';
 import 'package:news_app/utils/strings.dart';
 import 'package:news_app/utils/styles.dart';
 
@@ -89,11 +89,9 @@ class SearchButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: () {
-        Navigator.push(
+        Navigator.pushNamed(
           context,
-          MaterialPageRoute(
-            builder: (context) => const SearchPage(),
-          ),
+          Routes.search,
         );
       },
       icon: const Icon(Icons.search),

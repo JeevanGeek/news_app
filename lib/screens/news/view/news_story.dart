@@ -4,13 +4,7 @@ import 'package:news_app/widgets/widgets.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class NewsStory extends StatefulWidget {
-  const NewsStory({
-    Key? key,
-    required this.source,
-    required this.url,
-  }) : super(key: key);
-
-  final String source, url;
+  const NewsStory({Key? key}) : super(key: key);
 
   @override
   State<NewsStory> createState() => _NewsStoryState();
@@ -21,12 +15,13 @@ class _NewsStoryState extends State<NewsStory> {
 
   @override
   Widget build(BuildContext context) {
+    final data = ModalRoute.of(context)?.settings.arguments as List;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         elevation: 0,
         title: Text(
-          widget.source,
+          data[0],
           style: Styles.bold20,
         ),
       ),
@@ -36,7 +31,7 @@ class _NewsStoryState extends State<NewsStory> {
             opacity: loading ? 0 : 1,
             child: WebView(
               onPageFinished: (url) => setState(() => loading = false),
-              initialUrl: widget.url,
+              initialUrl: data[1],
               javascriptMode: JavascriptMode.unrestricted,
             ),
           ),

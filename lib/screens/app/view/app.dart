@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/utils/routes.dart';
 import 'package:news_app/utils/constants.dart';
-import 'package:news_app/screens/loading/loading.dart';
 import 'package:news_app/utils/strings.dart';
 
 class NewsApp extends StatelessWidget {
@@ -11,6 +11,8 @@ class NewsApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: Strings.appName,
+      routes: Routes.routes,
+      initialRoute: Routes.loading,
       theme: ThemeData(
         useMaterial3: true,
         fontFamily: 'Helvetica',
@@ -22,7 +24,6 @@ class NewsApp extends StatelessWidget {
           secondary: kPrimaryColor,
         ),
       ),
-      home: const LoadingPage(),
     );
   }
 }

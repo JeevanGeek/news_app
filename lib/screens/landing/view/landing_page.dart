@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/utils/routes.dart';
 import 'package:news_app/utils/storage.dart';
 import 'package:news_app/models/country_model.dart';
-import 'package:news_app/screens/news/news.dart';
 import 'package:news_app/utils/strings.dart';
 import 'package:news_app/utils/styles.dart';
 import 'package:news_app/widgets/widgets.dart';
@@ -25,11 +25,9 @@ class LandingPage extends StatelessWidget {
           onTap: () async {
             await Storage.setCountry(Country.countries[index].name);
             await Storage.setCountryCode(Country.countries[index].code);
-            Navigator.pushAndRemoveUntil(
+            Navigator.pushNamedAndRemoveUntil(
               context,
-              MaterialPageRoute(
-                builder: (context) => const NewsPage(),
-              ),
+              Routes.news,
               (route) => false,
             );
           },

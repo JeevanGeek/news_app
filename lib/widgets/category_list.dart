@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/models/category_model.dart';
-import 'package:news_app/screens/category/category.dart';
+import 'package:news_app/utils/routes.dart';
 import 'package:news_app/utils/styles.dart';
 
 class CategoryList extends StatelessWidget {
@@ -20,12 +20,10 @@ class CategoryList extends StatelessWidget {
           itemCount: Category.categories.length,
           itemBuilder: (context, index) => GestureDetector(
             onTap: () async {
-              Navigator.push(
+              Navigator.pushNamed(
                 context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      CategoryPage(Category.categories[index].name),
-                ),
+                Routes.category,
+                arguments: Category.categories[index].name,
               );
             },
             child: Padding(

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_app/screens/news/news.dart';
-import 'package:news_app/screens/landing/landing.dart';
+import 'package:news_app/utils/routes.dart';
 import 'package:news_app/screens/loading/loading.dart';
 import 'package:news_app/widgets/widgets.dart';
 
@@ -26,19 +25,15 @@ class LoadingView extends StatelessWidget {
       body: BlocListener<LoadingBloc, LoadingState>(
         listener: (context, state) {
           if (state is CountrySet) {
-            Navigator.pushAndRemoveUntil(
+            Navigator.pushNamedAndRemoveUntil(
               context,
-              MaterialPageRoute(
-                builder: (context) => const NewsPage(),
-              ),
+              Routes.news,
               (route) => false,
             );
           } else if (state is CountryNotSet) {
-            Navigator.pushAndRemoveUntil(
+            Navigator.pushNamedAndRemoveUntil(
               context,
-              MaterialPageRoute(
-                builder: (context) => const LandingPage(),
-              ),
+              Routes.landing,
               (route) => false,
             );
           }
