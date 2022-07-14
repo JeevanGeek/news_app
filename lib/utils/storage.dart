@@ -1,10 +1,12 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Storage {
   Storage._();
 
-  static const String country = "country";
-  static const String countryCode = "countryCode";
+  static const String COUNTRY = "country";
+  static const String CUNTRYCODE = "countryCode";
 
   static late SharedPreferences preference;
 
@@ -13,18 +15,18 @@ class Storage {
   }
 
   static Future setCountry(String country) async {
-    await preference.setString(country, country);
+    await preference.setString(COUNTRY, country);
   }
 
   static String getCountry() {
-    return preference.getString(country) ?? "";
+    return preference.getString(COUNTRY) ?? "";
   }
 
   static Future setCountryCode(String countryCode) async {
-    await preference.setString(countryCode, countryCode);
+    await preference.setString(CUNTRYCODE, countryCode);
   }
 
   static String getCountryCode() {
-    return preference.getString(countryCode) ?? "";
+    return preference.getString(CUNTRYCODE) ?? "";
   }
 }

@@ -14,7 +14,7 @@ class NewsApp extends StatelessWidget {
       routes: Routes.routes,
       initialRoute: Routes.loading,
       theme: ThemeData(
-        useMaterial3: true,
+        // useMaterial3: true,
         fontFamily: 'Helvetica',
         primaryColor: kPrimaryColor,
         primarySwatch: Colors.blueGrey,
